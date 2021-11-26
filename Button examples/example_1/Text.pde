@@ -1,22 +1,41 @@
-String buttonText1 = "click me bitch";
-String buttonText2 = "nah me bitch";
+String buttonText1 = "click me";
+String buttonText2 = "no";
 PFont buttonFont;
-color purple = #2C08FF; white = #FFFFFF;
+color pink = #F08080, white = #FFFFFF;
 //
-println("Start of Console");
+void textSetup()
+{
+  //println("Start of Console");
+  //String[] fontList = PFont.list(); 
+  //printArray(fontList);
+  buttonFont = createFont ("Castellar", 40);
+}//End setup()
 //
-String[] fontList = PFont.list(); 
-printArray(fontList); 
-buttonFont = createFont ("Harrington", 55);
-
-
-//Laying out text space and tyopgraphical Features
-
-fill(purple); //Ink, hexidecimal copied from Color Selector
-textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
-//Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
-textFont(titleFont, 50); //Change the number until it fits, largest font size
-//textFont() has option to combine font declaration with textSize()
-text(title, titleX, titleY, titleWidth, titleHeight);
-fill(white); //reset
-//Space for more rectangles below, with reset values
+void textDrawPre()
+{
+  //Laying out text space and tyopgraphical Features
+  fill(pink); //Ink, hexidecimal copied from Color Selector
+  textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+  textFont(buttonFont, 40); //Change the number until it fits, largest font size
+  //textFont() has option to combine font declaration with textSize()
+}//End textDrawPre
+void textDraw1()
+{
+  textDrawPre();
+  text(buttonText1, buttonX1, buttonY1, buttonWidth1, buttonHeight1);
+  textDrawPost();
+  //Space for more rectangles below, with reset values
+}//End textDraw1()
+//
+void textDraw2()
+{
+  textDrawPre();
+    text(buttonText2, buttonX2, buttonY2, buttonWidth2, buttonHeight2);
+  textDrawPost();
+  //Space for more rectangles below, with reset values
+}//End textDraw2
+void textDrawPost()
+{
+  fill(white); //reset
+}//End textDrawPost
