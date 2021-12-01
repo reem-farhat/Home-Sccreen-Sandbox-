@@ -2,38 +2,16 @@
 
 //Global Variables
 color purple = #8E1F90, white = #FFFFFF;
-float circleDiameter, rectWidth, rectHeight, rect ;
-float ptX1, ptX2, ptX3, ptX4, ptX5 ,ptX6, ptX7, ptX8, ptX9, ptX10, ptX11, ptX12, ptX13, ptX14, ptX15, ptX16;
+float circleDiameter, rectWidth, rectHeight;
+float ptX1, ptX2, ptX3, ptX4, ptX5, ptX6, ptX7, ptX8, ptX9, ptX10, ptX11, ptX12, ptX13, ptX14, ptX15, ptX16;
 float ptY1, ptY2, ptY3, ptY4, ptY5, ptY6, ptY7, ptY8, ptY9, ptY10, ptY11, ptY12, ptY13, ptY14, ptY15, ptY16;
 float buttonX1, buttonWidth1, buttonY1, buttonHeight1;
-
+Boolean rect = false;
 void setup() 
 {
   fullScreen();
-  //Population
-  ptX1 = displayWidth*0;
-  ptX2 = displayWidth*1/3;
-  ptX3 = displayWidth*2/3;
-  ptX4 = displayWidth*3/3;
-  ptX5 = displayWidth*0;
-  ptX6 = displayWidth*1/3;
-  ptX7 = displayWidth*2/3;
-  ptX8 = displayWidth*3/3;
-  ptX9 = displayWidth*0;
-  ptX10 = displayWidth*1/3;
-  ptX11 = displayWidth*2/3; 
-  ptX12 = displayWidth*3/3;
-  ptX13 = displayWidth*0;
-  ptX14 = displayWidth*1/3;
-  ptX15 = displayWidth*2/3;
-  ptX16 = displayWidth*3/3;
-  ptY1 = ptY2 = ptY3 = ptY4 = displayHeight*0;
-  ptY5 = ptY6 = ptY7 = ptY8 = displayHeight*1/3;
-  ptY9 = ptY10 = ptY11 = ptY12 = displayHeight*2/3;
-  ptY13 = ptY14 = ptY15 = ptY16 = displayHeight*3/3;
-  rectWidth = displayWidth*1/3;
-  rectHeight = displayHeight*1/3;
-  circleDiameter = displayWidth*1/60;
+  population();
+  textSetup();
 }//End setup()
 
 void draw() 
@@ -68,15 +46,16 @@ void draw()
   ellipse(ptX15, ptY15, circleDiameter, circleDiameter);
   ellipse(ptX16, ptY16, circleDiameter, circleDiameter);
   fill(white);
+  //
+  textDrawPre();
 }//End draw()
 
 void mousePressed() 
 {
   rect = false;
-  if (mouseX>buttonX1 && mouseX<buttonX1+buttonWidth1 && mouseY>buttonY1 && mouseY<buttonY1+buttonHeight1) rect = false;
+  if (mouseX>ptX6 && mouseX<ptX6+rectWidth && mouseY>ptY6 && mouseY<ptY6+rectHeight) rect = true;
 }//End mousePressed()
 
 void keyPressed() 
 {
-  
 }//End keyPressed()
